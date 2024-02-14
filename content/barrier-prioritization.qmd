@@ -1,0 +1,247 @@
+# Barrier Prioritization {-}
+
+```{python}
+#| echo: false
+#| warning: false
+
+import pandas as pd
+import numpy as np
+import warnings
+import requests
+import json
+import pandas
+
+def barrier_extent(barrier_type):
+
+    request = 'http://159.89.114.239:9002/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+
+    response_api = requests.get(request)
+    parse = response_api.text
+    result = json.loads(parse)
+
+    blocked_km = result[0]['all_habitat_blocked_km']
+    blocked_pct = result[0]['extent_pct']
+
+    return blocked_km, blocked_pct
+
+def barrier_count(barrier_type):
+    request = 'http://159.89.114.239:9002/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+
+    response_api = requests.get(request)
+    parse = response_api.text
+    result = json.loads(parse)
+
+    n_passable = result[0]['n_passable']
+    n_barrier = result[0]['n_barrier']
+    n_potential = result[0]['n_potential']
+    n_unknown = result[0]['n_unknown']
+
+    sum_bar = (n_passable, n_barrier, n_potential, n_unknown)
+
+    return n_passable, n_barrier, n_potential, n_unknown, sum(sum_bar)
+
+def barrier_severity(barrier_type):
+
+    request = 'http://159.89.114.239:9002/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+
+    response_api = requests.get(request)
+    parse = response_api.text
+    result = json.loads(parse)
+
+    n_assessed_barrier = result[0]['n_assessed_barrier']
+    n_assess_total = result[0]['n_assess_total']
+    pct_assessed_barrier = result[0]['pct_assessed_barrier']
+
+    return n_assessed_barrier, n_assess_total, pct_assessed_barrier
+
+def watershed_connectivity(habitat_type):
+
+    request = 'http://159.89.114.239:9002/functions/postgisftw.wcrp_watershed_connectivity_status/items.json?watershed_group_code=HORS&barrier_type=' + habitat_type
+
+    response_api = requests.get(request)
+    parse = response_api.text
+    result = json.loads(parse)
+
+    connect_stat = result[0]['connectivity_status']
+    all_habitat = result[0]['all_habitat']
+    all_habitat_acc = result[0]['all_habitat_accessible']
+
+    return str(round(connect_stat)), all_habitat, all_habitat_acc
+
+warnings.filterwarnings('ignore')
+
+total = watershed_connectivity("ALL")[1] #total km in HORS
+access = watershed_connectivity("ALL")[2]
+gain = round((total*0.96)-access,2)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+
+gain <- py$gain
+
+```
+
+## Horsefly River Watershed Barrier Prioritization Summary {-}
+
+The primary conservation outcome of the WCRP will be the remediation of barriers to connectivity in the Horsefly River watershed. To achieve Goal 1 in this plan, it is necessary to prioritize and identify a suite of barriers that, if remediated, will provide access to a minimum of `r gain` km of spawning or rearing habitat (@tbl-table16):
+
+
+```{python echo=FALSE}
+#| label: tbl-table16
+#| tbl-cap: "Spawning and rearing habitat connectivity gain requirements to meet WCRP goals in the Horsefly River watershed. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model described in Appendix B."
+#| warning: false
+#| echo: false
+
+import pandas as pd
+import numpy as np
+import matplotlib as mpl
+import warnings
+
+warnings.filterwarnings('ignore')
+
+total = watershed_connectivity("ALL")[1] #total km in HORS
+access = watershed_connectivity("ALL")[2]
+gain = round((total*0.96)-access,2)
+
+df = pd.DataFrame({"Habitat Type":["Spawning and Rearing"],
+                   "Currently accessible (km)":[str(access)],
+                   "Total": [str(total)],
+                   "Current Connectivity Status":[str(watershed_connectivity("ALL")[0])+"%"],
+                   "Goal": ["96%"],
+                   "Gain required (km)": [str(gain)]
+                   })
+
+data = df.style.hide_index().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+
+The barrier prioritization analysis ranked barriers by the amount of habitat blocked to produce an "intermediate barrier list" comprising more barriers than are needed to achieve the goals. A longer list of barriers is needed due to the inherent assumptions in the connectivity model, habitat model, and gaps in available data. Barriers that have been modelled (i.e., points where streams and road/rail networks intersect) are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model identifies stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability (see Appendix B), which will require additional field verification once barrier assessments have completed. As such, the intermediate list of barriers below (@tbl-intermediate) should be considered as a starting point in the prioritization process and represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations. The intermediate barrier list was updated following the barrier assessments and habitat confirmations that were undertaken during the 2021 field season - some barriers were moved forward to the "priority barrier list" (see @tbl-priority) and others were eliminated from consideration due to one or more of the considerations discussed above (see @tbl-remove). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat. Barriers on the priority list were reviewed by planning team members and selected for inclusion for proactive pursual of remediation.  For more details on the barrier prioritization model, please see @Mazany-Wright2021-rz.
+
+```{r priority, echo = FALSE, results = 'asis'}
+#| label: tbl-priority
+#| tbl-cap: "The Horsefly River watershed priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected to pursue for proactive remediation."
+#| warning: false
+#| echo: false
+
+library("flextable")
+
+data <- read.csv("data/priority_barriers.csv", check.names=FALSE)
+prior_num <- length(data)
+ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft <- align_text_col(ft, align = "left", header = TRUE)
+ft <- align_nottext_col(ft, align = "left", header = TRUE)
+ft |> autofit() 
+```
+
+```{r intermediate, echo = FALSE, results = 'asis'}
+#| label: tbl-intermediate
+#| tbl-cap: "Updated intermediate barrier list resulting from the second barrier prioritization analysis in the Horsefly River watershed. After assessing the potential barriers on the first iteration of the intermediate list (2021 field season) and either identifying them as remediation priorities or eliminating them from consideration (e.g., because they passed fish or did hot have suitable habitat upstream), the remaining potential barriers in the watershed were re-prioritized. The barriers on this list were prioritized to exceed the connectivity goals of the plan. Barriers highlighted in the same colour represent sets of barriers that have been prioritized as a group. In the Barrier Status column, P = potential barrier and B = confirmed barrier. All barrier assessment data is compiled from the BC Provincial Stream Crossing Inventory System."
+#| warning: false
+#| echo: false
+
+library("flextable")
+
+data <- read.csv("data/Table18.csv", check.names=FALSE)
+inter_num <- length(data)
+ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft <- align_text_col(ft, align = "left", header = TRUE)
+ft <- align_nottext_col(ft, align = "left", header = TRUE)
+ft |> autofit() 
+```
+
+```{r remove, echo = FALSE, results = 'asis'}
+#| label: tbl-remove
+#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive remediation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to remediate because of logistic considerations."
+#| warning: false
+#| echo: false
+
+library("flextable")
+
+data <- read.csv("data/Table17.csv", check.names=FALSE)
+ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft <- align_text_col(ft, align = "left", header = TRUE)
+ft <- align_nottext_col(ft, align = "left", header = TRUE)
+ft |> autofit() 
+```
+
+```{python}
+#| label: tbl-remove1
+#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive remediation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to remediate because of logistic considerations."
+#| warning: false
+#| echo: false
+#| 
+import pandas as pd
+
+df = pd.read_csv('data/Table17.csv')
+
+data = df.style.hide_index().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+```
+
+
+Out of the `r inter_num` on the intermediate list, 16 require further field assessment before selection as a final barrier to pursue for remediation: 
+
+```{r fieldreq, echo = FALSE, results = 'asis'}
+#| label: tbl-fieldreq
+#| tbl-cap: "Field assessment requirements for the intermediate barrier list in the Horsefly River watershed. The cost per barrier values are estimates based on previously completed field work. The habitat confirmation count is based on the assumption that the 12 barriers requiring barrier assessments will also require a subsequent confirmation. In the case that some barriers are identified as unsuitable candidates for habitat confirmations, the total cost will be reduced."
+#| warning: false
+#| echo: false
+
+library("flextable")
+
+data <- read.csv("data/Table20.csv", check.names=FALSE)
+ft <- flextable(data) 
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft <- align_text_col(ft, align = "left", header = TRUE)
+ft <- align_nottext_col(ft, align = "left", header = TRUE)
+ft |> autofit() 
+```
+
+There are currently `r prior_num` barriers on the priority barrier list, which will be pursued for proactive remediation to achieve the connectivity goals in this plan:
+
+```{r remcost, echo = FALSE, results = 'asis'}
+#| label: tbl-remcost
+#| tbl-cap: "Preliminary barrier remediation cost estimate to reach connectivity goals in the Horsefly River watershed. Cost per barrier values are estimated based on the average cost of previously completed projects. Barrier counts and total costs are subject to change as more information is collected through the implementation of this plan."
+#| warning: false
+#| echo: false
+
+library("flextable")
+
+data <- read.csv("data/Table21.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft <- align_text_col(ft, align = "left", header = TRUE)
+ft <- align_nottext_col(ft, align = "left", header = TRUE)
+ft |> autofit() 
+```
+
+## Progress Tracking Update {-}
