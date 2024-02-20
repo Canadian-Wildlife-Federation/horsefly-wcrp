@@ -44,7 +44,7 @@ data = data.replace(np.nan, '', regex=True)
 
 data = data.applymap(fix_table)
 
-data = data.style.applymap(highlighttab7).hide_index().set_properties(**{'text-align': 'left'})
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
 data.set_table_styles(
    [{
        'selector': 'th',
@@ -67,7 +67,7 @@ data = data.replace(np.nan, '', regex=True)
 
 data = data.applymap(fix_table)
 
-data = data.style.applymap(highlighttab7).hide_index().set_properties(**{'text-align': 'left'})
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{
@@ -91,7 +91,7 @@ data = data.replace(np.nan, '', regex=True)
 
 data = data.applymap(fix_table)
 
-data = data.style.applymap(highlighttab7).hide_index().set_properties(**{'text-align': 'left'})
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{
@@ -115,7 +115,7 @@ data = pd.read_csv('data/Strategy4.csv', index_col=False)
 
 data = data.applymap(fix_table)
 
-data = data.style.applymap(highlighttab7).hide_index().set_properties(**{'text-align': 'left'})
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{
@@ -138,7 +138,7 @@ data = data.replace(np.nan, '', regex=True)
 
 data = data.applymap(fix_table)
 
-data = data.style.applymap(highlighttab7).hide_index().set_properties(**{'text-align': 'left'})
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{
@@ -183,7 +183,7 @@ data = data.replace(np.nan, '', regex=True)
 
 rows = pd.IndexSlice[[0,10,16,23,26,29,30,31], :]
 
-data = data.style.applymap(df_operation, subset=rows).hide_index().set_properties(**{'text-align': 'left'})
+data = data.style.applymap(df_operation, subset=rows).hide().set_properties(**{'text-align': 'left'})
 data.set_table_styles(
    [{
        'selector': 'th',

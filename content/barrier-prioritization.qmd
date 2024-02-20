@@ -115,7 +115,7 @@ df = pd.DataFrame({"Habitat Type":["Spawning and Rearing"],
                    "Gain required (km)": [str(gain)]
                    })
 
-data = df.style.hide_index().set_properties(**{'text-align': 'left'})
+data = df.style.hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{
@@ -194,7 +194,7 @@ import pandas as pd
 
 df = pd.read_csv('data/Table17.csv')
 
-data = df.style.hide_index().set_properties(**{'text-align': 'left'})
+data = df.style.hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{

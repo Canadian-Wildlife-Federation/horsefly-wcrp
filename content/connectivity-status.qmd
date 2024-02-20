@@ -126,7 +126,7 @@ df.style.applymap(highlighttab7).set_table_styles(
    [{
        'selector': 'th',
        'props': [('background-color', '#008270'),('text-align', 'left')]
-   }]).hide_index()
+   }]).hide()
 ```
 
 **Comments:** Indicator rating definitions are based on the consensus decisions of the planning team, including the decision not to define Fair. The current status is based on the CWF Barrier Prioritization Model output, which is current as of March 2022.
@@ -173,7 +173,7 @@ df.style.applymap(highlighttab7b).set_table_styles(
    [{
        'selector': 'th',
        'props': [('background-color', '#008270'),('text-align', 'left')]
-   }]).hide_index()
+   }]).hide()
 
 
 ```
@@ -254,7 +254,7 @@ def highlight(val):
 
 #df = df.style.set_properties(subset=["Overall Threat Rating"], **{'font-weight': 'bold'})
 
-data = df.applymap(highlight).hide_index()
+data = df.applymap(highlight).hide()
 
 data.set_table_styles(
    [{
@@ -341,7 +341,7 @@ df = pd.DataFrame({"Goal #": [1,2],
                             "By 2024, the total area of overwintering habitat accessible to Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
                     })
 
-data = df.style.hide_index().set_properties(**{'text-align': 'left'})
+data = df.style.hide().set_properties(**{'text-align': 'left'})
 
 data.set_table_styles(
    [{
