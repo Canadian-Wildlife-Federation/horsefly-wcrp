@@ -9,9 +9,9 @@
     ]
   },
   "Python": {
-    "Version": "3.10.0",
+    "Version": "3.8.0",
     "Type": "virtualenv",
-    "Name": "./renv/python/virtualenvs/renv-python-3.10"
+    "Name": "./renv/python/virtualenvs/renv-python-3.8"
   },
   "Packages": {
     "Matrix": {
