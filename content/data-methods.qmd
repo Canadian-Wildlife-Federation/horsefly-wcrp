@@ -1,4 +1,4 @@
-# Appendix C {-}
+# Data Download and Methods {-}
 
 ## Modelled Anadromous Salmon Habitat Maps {-}
 
@@ -17,7 +17,7 @@ The connectivity status assessment for anadromous salmonids in the Horsefly Rive
 
 library("flextable")
 
-data <- read.csv("data/Table15.csv", check.names=FALSE)
+data <- read.csv("data/additional-key-actors.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
