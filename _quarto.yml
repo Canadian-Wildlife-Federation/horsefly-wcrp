@@ -11,11 +11,11 @@ book:
     - index.qmd
     - content/project-overview.qmd
     - content/connectivity-status.qmd
-    - content/barrier-prioritization.qmd
+    - content/work-planning.qmd
     - content/references.qmd
   appendices: 
-    - content/planning-team.qmd
-    - content/strategies-actions.qmd 
+    - content/project-partners.qmd
+    - content/supplementary-information.qmd 
     - content/data-methods.qmd
   
   
