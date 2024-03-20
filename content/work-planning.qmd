@@ -1,4 +1,4 @@
-# Barrier Prioritization {-}
+# Work Planning {-}
 
 ```{python}
 #| echo: false
@@ -155,7 +155,7 @@ ft |> autofit()
 
 library("flextable")
 
-data <- read.csv("data/Table18.csv", check.names=FALSE)
+data <- read.csv("data/intermediate-barriers.csv", check.names=FALSE)
 inter_num <- length(data)
 ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
 ft <- bg(ft, bg = "#008270", part = "header")
@@ -174,7 +174,7 @@ ft |> autofit()
 
 library("flextable")
 
-data <- read.csv("data/Table17.csv", check.names=FALSE)
+data <- read.csv("data/removed-from-consideration.csv", check.names=FALSE)
 ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
@@ -192,7 +192,7 @@ ft |> autofit()
 #| 
 import pandas as pd
 
-df = pd.read_csv('data/Table17.csv')
+df = pd.read_csv('data/removed-from-consideration.csv')
 
 data = df.style.hide().set_properties(**{'text-align': 'left'})
 
@@ -214,7 +214,7 @@ Out of the `r inter_num` on the intermediate list, 16 require further field asse
 
 library("flextable")
 
-data <- read.csv("data/Table20.csv", check.names=FALSE)
+data <- read.csv("data/field-reqs.csv", check.names=FALSE)
 ft <- flextable(data) 
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
@@ -234,7 +234,7 @@ There are currently `r prior_num` barriers on the priority barrier list, which w
 
 library("flextable")
 
-data <- read.csv("data/Table21.csv", check.names=FALSE)
+data <- read.csv("data/remediation-cost.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")

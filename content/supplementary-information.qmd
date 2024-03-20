@@ -1,6 +1,6 @@
 <!-- # Horsefly River Watershed Secwepemcúl’ecw Connectivity Remediation Plan: 2021 - 2040 {-} -->
 
-# Appendix B {-}
+# Supplementary Information {-}
 
 ## Situation Analysis {-}
 
@@ -23,7 +23,7 @@ import numpy as np
 from IPython.display import display
 import pandas as pd
 
-data = pd.read_csv('data/Strategy1.csv', index_col=False, skip_blank_lines=False )
+data = pd.read_csv('data/strategy-crossing-remediation.csv', index_col=False, skip_blank_lines=False )
  
 def fix_table(val):
     return str(val)
@@ -61,7 +61,7 @@ data.set_table_styles(
 #| warning: false
 #| echo: false
 
-data = pd.read_csv('data/Strategy2.csv', escapechar='\n', index_col=False)
+data = pd.read_csv('data/strategy-lateral-barrier-remediation.csv', escapechar='\n', index_col=False)
 
 data = data.replace(np.nan, '', regex=True)
 
@@ -85,7 +85,7 @@ data.set_table_styles(
 #| warning: false
 #| echo: false
 
-data = pd.read_csv('data/Strategy3.csv', index_col=False)
+data = pd.read_csv('data/strategy-dam-remediation.csv', index_col=False)
 
 data = data.replace(np.nan, '', regex=True)
 
@@ -111,7 +111,7 @@ data.set_table_styles(
 
 import pandas as pd
 
-data = pd.read_csv('data/Strategy4.csv', index_col=False)
+data = pd.read_csv('data/strategy-barrier-prevention.csv', index_col=False)
 
 data = data.applymap(fix_table)
 
@@ -132,7 +132,7 @@ data.set_table_styles(
 #| warning: false
 #| echo: false
 
-data = pd.read_csv('data/Strategy5.csv', index_col=False)
+data = pd.read_csv('data/strategy-comm-edu.csv', index_col=False)
 
 data = data.replace(np.nan, '', regex=True)
 
@@ -177,7 +177,7 @@ def df_operation(val):
     return "background-color: black; color: white"
 
 
-data = pd.read_csv('data/Table13.csv', index_col=False)
+data = pd.read_csv('data/operational-plan.csv', index_col=False)
 
 data = data.replace(np.nan, '', regex=True)
 
@@ -201,7 +201,7 @@ data.set_table_styles(
 
 library("flextable")
 
-data <- read.csv("data/Table14.csv", check.names=FALSE)
+data <- read.csv("data/funding-sources.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
