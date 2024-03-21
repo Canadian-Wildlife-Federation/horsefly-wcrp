@@ -4,7 +4,7 @@
 
 High-resolution PDF maps of the Horsefly River watershed and model results can be accessed [here](https://github.com/smnorris/bcfishpass/tree/main/wcrp/pdfs). The watershed is divided into multiple maps sheets to allow for detailed examination of modelled spawning and rearing habitat, multiple barrier types, and priority barriers identified through this planning process. The locations of WCRP priority barriers and associated map sheet numbers are shown below. In each individual map sheet, priority barriers are symbolized using the following notation: 
 
-![Horsefly River watershed overview map identifying the portions of the watershed covered by each map sheet (grey squares) and the prioritized barriers on the intermediate barrier list (orange points; see Appendix B).](images/figure8.png){#fig-over}
+![Horsefly River watershed overview map identifying the portions of the watershed covered by each map sheet (grey squares) and the prioritized barriers on the intermediate barrier list (orange points; see Appendix B).](images/overview-map-hors.png){#fig-over}
 
 ## Connectivity Status Assessment Methods {-}
 
