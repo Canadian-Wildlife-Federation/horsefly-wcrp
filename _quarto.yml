@@ -13,6 +13,7 @@ book:
     - content/connectivity-status.qmd
     - content/work-planning.qmd
     - content/references.qmd
+    - content/version-history.qmd
   appendices: 
     - content/project-partners.qmd
     - content/supplementary-information.qmd 
