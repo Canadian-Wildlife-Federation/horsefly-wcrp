@@ -245,3 +245,9 @@ ft |> autofit()
 ```
 
 ## Progress Tracking Update {-}
+
+## Annual Progress Report {-}
+
+## WCRP Tables {-}
+
+## Annual Work Plan and Action Plan {-}
