@@ -64,7 +64,6 @@ data.set_table_styles(
 
 ```
 
-## Funding Sources {-}
 ```{r fund, echo = FALSE, results = 'asis'}
 #| label: tbl-fund
 #| tbl-cap: "Potential funding sources for plan implementation in the Horsefly River watershed. The Canadian Wildlife Federation and the planning team can coordinate proposal submission through these sources."
@@ -72,12 +71,6 @@ data.set_table_styles(
 
 library("flextable")
 
-data <- read.csv("data/funding-sources.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
 ```
 
 ## Annual Work Plan {-}
