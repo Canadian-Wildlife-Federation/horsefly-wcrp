@@ -1,5 +1,7 @@
 # Work Planning {-}
 
+## Annual Progress Report {-}
+
 ```{python}
 #| echo: false
 #| warning: false
@@ -243,11 +245,5 @@ ft <- align_text_col(ft, align = "left", header = TRUE)
 ft <- align_nottext_col(ft, align = "left", header = TRUE)
 ft |> autofit() 
 ```
-
-## Progress Tracking Update {-}
-
-## Annual Progress Report {-}
-
-## WCRP Tables {-}
 
 ## Annual Work Plan and Action Plan {-}
