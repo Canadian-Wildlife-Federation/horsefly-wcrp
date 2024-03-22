@@ -11,6 +11,7 @@ book:
     - index.qmd
     - content/project-overview.qmd
     - content/connectivity-status.qmd
+    - content/barrier-prioritization.qmd
     - content/work-planning.qmd
     - content/references.qmd
     - content/version-history.qmd
