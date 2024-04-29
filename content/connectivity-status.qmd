@@ -16,7 +16,7 @@ import pandas
 
 def barrier_extent(barrier_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass_dev/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -28,7 +28,7 @@ def barrier_extent(barrier_type):
     return blocked_km, blocked_pct
 
 def barrier_count(barrier_type):
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass_dev/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -45,7 +45,7 @@ def barrier_count(barrier_type):
 
 def barrier_severity(barrier_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass_dev/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -59,7 +59,7 @@ def barrier_severity(barrier_type):
 
 def watershed_connectivity(habitat_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass_dev/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=HORS&barrier_type=' + habitat_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=HORS&barrier_type=' + habitat_type
 
     response_api = requests.get(request)
     parse = response_api.text
