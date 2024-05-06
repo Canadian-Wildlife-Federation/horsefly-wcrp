@@ -212,7 +212,7 @@ def barrier_severity(barrier_type):
 
 def watershed_connectivity(habitat_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=HORS&barrier_type=' + habitat_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=HORS&habitat_type=' + habitat_type
 
     response_api = requests.get(request)
     parse = response_api.text
