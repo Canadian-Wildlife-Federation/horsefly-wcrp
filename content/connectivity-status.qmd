@@ -197,7 +197,7 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame({"Goal #": [1,2],
-                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from 94% to 96% within the Horsefly River watershed (i.e., reconnect at least 11.7 km of habitat).",
+                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from 91% to 96% within the Horsefly River watershed (i.e., reconnect at least 19.45 km of habitat).",
                             "By 2024, the total area of overwintering habitat accessible to Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
                     })
 
