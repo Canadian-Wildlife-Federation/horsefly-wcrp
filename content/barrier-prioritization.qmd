@@ -189,3 +189,4 @@ ft <- set_caption(ft)
 ft <- align_text_col(ft, align = "left", header = TRUE)
 ft <- align_nottext_col(ft, align = "left", header = TRUE)
 ft |> autofit() 
+```

@@ -1,6 +1,9 @@
 # Work Planning {-}
 
-## Annual Progress Update {-}
+## Annual Progress Updates {-}
+CWF continues to work with barrier owners to advance rehabilitation of priority barriers. Tolko Industries Ltd. has completed barrier rehabilitation on 126511 Tributary to Horsefly River and 126594 Niquidet Creek, with further plans to rehabilitate crossings on 57298 Boscar Creek and 57158 McKinley Creek in the near future. CWF continues to work with the BC Ministry of Transportation and Infrastructure to try to advance rehabilitation designs for Vedder and Wilmot creeks. CWF attended the 2023 Horsefly Salmon Festival, where they shared an interactive art display to communicate the fish passage efforts in the watershed. Other program partners were also in attendance to educate the public about various aspects of salmon and conservation taking place in the watershed. The Williams Lake First Nation worked with the BC Ministry of Forests to review and identify potential barriers for rehabilitation in the upper portions of the Horsefly River watershed, with some tentative sites for rehabilitation identified that are currently being explored.
+
+## Annual Work Plan {-}
 ```{r keyact, echo = FALSE, results = 'asis'}
 #| label: tbl-progress
 #| tbl-cap: "2024-2025 Work Plan"
@@ -15,9 +18,6 @@ ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
 ft |> autofit() 
 ```
-
-## Annual Work Plan {-}
-CWF continues to work with barrier owners to advance rehabilitation of priority barriers. Tolko Industries Ltd. has completed barrier rehabilitation on 126511 Tributary to Horsefly River and 126594 Niquidet Creek, with further plans to rehabilitate crossings on 57298 Boscar Creek and 57158 McKinley Creek in the near future. CWF continues to work with the BC Ministry of Transportation and Infrastructure to try to advance rehabilitation designs for Vedder and Wilmot creeks. CWF attended the 2023 Horsefly Salmon Festival, where they shared an interactive art display to communicate the fish passage efforts in the watershed. Other program partners were also in attendance to educate the public about various aspects of salmon and conservation taking place in the watershed. The Williams Lake First Nation worked with the BC Ministry of Forests to review and identify potential barriers for rehabilitation in the upper portions of the Horsefly River watershed, with some tentative sites for rehabilitation identified that are currently being explored.
 
 ## Operational Plan {-}
 
