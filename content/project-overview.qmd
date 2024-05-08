@@ -218,7 +218,7 @@ def watershed_connectivity(habitat_type):
 
     connect_stat = result[0]['connectivity_status']
 
-    return str(round(connect_stat))
+    return str(round(connect_stat),2)
 
 num_dam = barrier_severity('DAM')[1]
 km_dam = barrier_extent('DAM')[0]
