@@ -1,5 +1,30 @@
 ```{python echo=FALSE}
 import python.api_calls as api
+from ipywidgets import *
+import pandas as pd
+import warnings
+
+warnings.filterwarnings('ignore')
+```
+
+```{r setup, include=FALSE}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+api <- import("python.api_calls")
+gain <- api$gain
+num_dam <- api$num_dam
+km_dam <- api$km_dam
+pct_dam <- api$pct_dam
+resource_km <- api$resource_km
+resource_pct <- api$resource_pct
+demo_km <- api$demo_km
+demo_pct <- api$demo_pct
+resource_sev <- api$resource_sev
+demo_sev <- api$demo_sev
+sum_road <- api$sum_road
+
 ```
 
 # Project Overview {-} 
@@ -171,11 +196,7 @@ The following table highlights which barrier types pose the greatest threat to a
 #| warning: false
 #| echo: false
 
-from ipywidgets import *
-import pandas as pd
-import warnings
 
-warnings.filterwarnings('ignore')
 
 #condition
 def condition(pct):
@@ -245,43 +266,6 @@ data.set_table_styles(
 
 
 ### Small Dams (<3 m height) {-}
-```{python}
-#| echo: false
-#| include: true
-
-
-num_dam = api.barrier_severity('DAM')[1]
-km_dam = api.barrier_extent('DAM')[0]
-pct_dam = api.barrier_extent('DAM')[1]
-resource_km = api.barrier_extent('ROAD, RESOURCE/OTHER')[0]
-resource_pct = round(api.barrier_extent('ROAD, RESOURCE/OTHER')[1])
-demo_km = api.barrier_extent('ROAD, DEMOGRAPHIC')[0]
-demo_pct = round(api.barrier_extent('ROAD, DEMOGRAPHIC')[1])
-resource_sev = round(api.barrier_severity('ROAD, RESOURCE/OTHER')[2])
-demo_sev = round(api.barrier_severity('ROAD, DEMOGRAPHIC')[2])
-sum_road = api.barrier_severity('ROAD, RESOURCE/OTHER')[1] + api.barrier_severity('ROAD, DEMOGRAPHIC')[1]
-```
-
-```{r echo=FALSE}
-#| echo: false
-#| include: true
-#| warning: false
-
-library(reticulate)
-
-
-num_dam <- py$num_dam
-km_dam <- py$km_dam
-pct_dam <- py$pct_dam
-resource_km <- py$resource_km
-resource_pct <- py$resource_pct
-demo_km <- py$demo_km
-demo_pct <- py$demo_pct
-resource_sev <- py$resource_sev
-demo_sev <- py$demo_sev
-sum_road <- py$sum_road
-
-```
 
 There are `r num_dam` mapped small dams on “potentially accessible” stream segments in the watershed, blocking a total of `r km_dam` km (~`r pct_dam`% of the total habitat) of modelled spawning and rearing habitat for anadromous salmon, resulting in a medium extent. The extent rating of these structures was confirmed by the planning team. There are two known fish-passage structures in the watershed, including on the dam at the outlet of McKinley Lake. The remaining dams likely block passage for anadromous salmon and would require significant resources to remediate. However, due to the limited extent of dams in the watershed, a final pressure rating of Medium was assigned. Four small dams were identified on the priority barrier list (see Appendix B). Three of the dams require further assessment and confirmation of upstream habitat quality, and the dam observed at the outlet of Kwun Lake does not exist. 
 

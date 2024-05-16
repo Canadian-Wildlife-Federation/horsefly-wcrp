@@ -25,9 +25,6 @@ The current connectivity status assessment relies on GIS analyses to map known a
 #| warning: false
 #| echo: false
 
-#import pandas as pd
-#import numpy as np
-#import matplotlib as mpl
 import warnings
 
 warnings.filterwarnings('ignore')
@@ -146,15 +143,6 @@ data.set_table_styles(
 #| warning: false
 
 num_dam = api.barrier_severity('DAM')[1]
-km_dam = api.barrier_extent('DAM')[0]
-pct_dam = api.barrier_extent('DAM')[1]
-resource_km = api.barrier_extent('ROAD, RESOURCE/OTHER')[0]
-resource_pct = round(api.barrier_extent('ROAD, RESOURCE/OTHER')[1])
-demo_km = api.barrier_extent('ROAD, DEMOGRAPHIC')[0]
-demo_pct = round(api.barrier_extent('ROAD, DEMOGRAPHIC')[1])
-resource_sev = round(api.barrier_severity('ROAD, RESOURCE/OTHER')[2])
-demo_sev = round(api.barrier_severity('ROAD, DEMOGRAPHIC')[2])
-sum_road = api.barrier_severity('ROAD, RESOURCE/OTHER')[1] + api.barrier_severity('ROAD, DEMOGRAPHIC')[1]
 
 ```
 
@@ -167,14 +155,5 @@ library(reticulate)
 
 
 num_dam <- py$num_dam
-km_dam <- py$km_dam
-pct_dam <- py$pct_dam
-resource_km <- py$resource_km
-resource_pct <- py$resource_pct
-demo_km <- py$demo_km
-demo_pct <- py$demo_pct
-resource_sev <- py$resource_sev
-demo_sev <- py$demo_sev
-sum_road <- py$sum_road
 
 ```

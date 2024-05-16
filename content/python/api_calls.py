@@ -67,3 +67,14 @@ warnings.filterwarnings('ignore')
 total = watershed_connectivity("ALL")[1] #total km in HORS
 access = watershed_connectivity("ALL")[2]
 gain = round((total*0.96)-access,2)
+
+num_dam = barrier_severity('DAM')[1]
+km_dam = barrier_extent('DAM')[0]
+pct_dam = barrier_extent('DAM')[1]
+resource_km = barrier_extent('ROAD, RESOURCE/OTHER')[0]
+resource_pct = round(barrier_extent('ROAD, RESOURCE/OTHER')[1])
+demo_km = barrier_extent('ROAD, DEMOGRAPHIC')[0]
+demo_pct = round(barrier_extent('ROAD, DEMOGRAPHIC')[1])
+resource_sev = round(barrier_severity('ROAD, RESOURCE/OTHER')[2])
+demo_sev = round(barrier_severity('ROAD, DEMOGRAPHIC')[2])
+sum_road = barrier_severity('ROAD, RESOURCE/OTHER')[1] + barrier_severity('ROAD, DEMOGRAPHIC')[1]
