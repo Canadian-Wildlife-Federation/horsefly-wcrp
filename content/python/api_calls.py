@@ -60,10 +60,11 @@ def watershed_connectivity(habitat_type):
     all_habitat = result[0]['all_habitat']
     all_habitat_acc = result[0]['all_habitat_accessible']
 
-    return str(round(connect_stat)), all_habitat, all_habitat_acc
+    return round(connect_stat), all_habitat, all_habitat_acc
 
 warnings.filterwarnings('ignore')
 
+connect = watershed_connectivity("ALL")[0]
 total = watershed_connectivity("ALL")[1] #total km in HORS
 access = watershed_connectivity("ALL")[2]
 gain = round((total*0.96)-access,2)
