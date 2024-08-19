@@ -1,0 +1,4 @@
+﻿Species,Channel Gradient (%),Mean annual discharge (m3/s),Channel gradient (%),Mean Annual discharge (m3/s),Minimum Lake area (ha),Multiplier (1.5x)
+Chinook Salmon,0-3 [1] [2],0.46-322.5 [3][4][5][6][7],0-5 [5][8],0.28-100 [9],NA,NA
+Coho Salmon,0-5 [6][10],0.164-59.15 [3][4][5][10][11],0-5 [8][12],0.03-40 [8][13],NA,Wetland
+Sockeye Salmon,0-2 [14][15],0.175-65 [3][4][5][6],NA,NA,200 [5],Lake
