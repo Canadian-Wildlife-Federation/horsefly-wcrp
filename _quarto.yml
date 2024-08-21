@@ -50,6 +50,12 @@ format:
     toc-depth: 2
     documentclass: scrreprt
     colorlinks: true
+    include-in-header: 
+      text: |
+        \usepackage{pdflscape}
+        \newcommand{\blandscape}{\begin{landscape}}
+        \newcommand{\elandscape}{\end{landscape}}
+
   docx:
     toc: true
     number-sections: true
