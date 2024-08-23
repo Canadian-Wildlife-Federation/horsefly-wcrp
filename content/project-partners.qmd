@@ -33,6 +33,7 @@ ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
-ft |> autofit() 
+ft <- width(ft, width = 3)
+ft
 ```
 

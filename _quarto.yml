@@ -49,6 +49,7 @@ format:
     toc-depth: 2
     documentclass: scrreprt
     colorlinks: true
+    classoption: landscape
   docx:
     toc: true
     number-sections: true

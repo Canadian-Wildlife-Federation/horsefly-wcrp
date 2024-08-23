@@ -13,7 +13,8 @@ ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
-ft |> autofit() 
+ft <- width(ft, width = 1)
+ft  
 ```
 
 ## Annual Progress Updates {-}
@@ -51,6 +52,7 @@ def highlighttab7(val):
 
 ```
 
+`{\tiny`{=latex}
 ```{python opplan, echo=FALSE}
 #| label: tbl-opplan
 #| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for target species in the Horsefly River watershed."
@@ -80,6 +82,7 @@ data.set_table_styles(
    }])
 
 ```
+`}`{=latex}
 
 ```{r fund, echo = FALSE, results = 'asis'}
 #| label: tbl-fund

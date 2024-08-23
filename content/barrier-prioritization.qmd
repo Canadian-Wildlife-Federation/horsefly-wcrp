@@ -1,3 +1,4 @@
+
 # Barrier Prioritization {-}
 
 ```{python}
@@ -150,7 +151,8 @@ ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
 ft <- align_text_col(ft, align = "left", header = TRUE)
 ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+ft <- width(ft, width = 2)
+ft 
 ```
 
 ```{r intermediate, echo = FALSE, results = 'asis'}
@@ -169,7 +171,8 @@ ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
 ft <- align_text_col(ft, align = "left", header = TRUE)
 ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+ft <- width(ft, width = 1)
+ft 
 ```
 
 ```{r priority, echo = FALSE, results = 'asis'}
@@ -188,5 +191,6 @@ ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
 ft <- align_text_col(ft, align = "left", header = TRUE)
 ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+ft <- width(ft, width = 0.6)
+ft
 ```

@@ -1,3 +1,14 @@
+```{python echo=FALSE}
+import warnings
+import pandas as pd
+import numpy as np
+import python.api_calls as api
+import python.connectivity_assess as conn_table
+
+warnings.filterwarnings('ignore')
+
+
+```
 # Connectivity Status Assessment and Goals {-}
 
 ## Connectivity Status Assessment {-}
@@ -138,6 +149,7 @@ df.style.applymap(highlighttab7).set_table_styles(
 
 **Comments:** Indicator rating definitions are based on the consensus decisions of the planning team, including the decision not to define Fair. The current status is based on the CWF Barrier Prioritization Model output, which is current as of March 2022.
 
+`{\tiny`{=latex}
 ```{python echo=FALSE}
 #| warning: false
 #| echo: false
@@ -184,12 +196,13 @@ df.style.applymap(highlighttab7b).set_table_styles(
 
 
 ```
+`}`{=latex}
 
 **Comments:** No baseline data exists on the extent of overwintering habitat in the watershed. A priority action is included in the Operational Plan (strategy 2.3) to develop a habitat layer, and this will be used to inform this connectivity status assessment in the future.
 
 
 ## Goals {-}
-
+`{\tiny`{=latex}
 ```{python echo=FALSE}
 #| label: tbl-goals
 #| tbl-cap: "Goals to improve (1) spawning and rearing and (2) overwintering habitat connectivity for target species in the Horsefly River watershed over the lifespan of the WCRP (2021-2040). The goals were established through discussions with the planning team and represent the resulting desired state of connectivity in the watershed. The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments)."
@@ -204,7 +217,7 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame({"Goal #": [1,2],
-                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from 90.51% to 96% within the Horsefly River watershed (i.e., reconnect at least 19.45 km of habitat).",
+                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from " + str(api.connect)+"% " + " to 96% within the Horsefly River watershed (i.e., reconnect at least "+ str(api.gain) +" km of habitat).",
                             "By 2024, the total area of overwintering habitat accessible to Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
                     })
 
@@ -217,7 +230,7 @@ data.set_table_styles(
    }])
 
 ```
-
+`}`{=latex}
 
 
 ```{r echo=FALSE}
