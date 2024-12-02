@@ -82,7 +82,7 @@ Following field assessments, structures are placed on one of five possible lists
 #| warning: false
 #| echo: false
 
-data <- read.csv("data/priority_barriers_for_rehabilitation_table.csv", check.names=FALSE)
+data <- read.csv("data/confirmed_barriers.csv", check.names=FALSE)
 prior_num <- nrow(data)
 ft <- flextable(data)
 ft <- format_flextable(ft)
@@ -95,7 +95,7 @@ ft
 #| warning: false
 #| echo: false
 
-data <- read.csv("data/assessed_data_deficient_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/assessed_strucDD.csv", check.names=FALSE)
 inter_num <- nrow(data)
 ft <- flextable(data)
 ft <- format_flextable(ft)
@@ -128,7 +128,7 @@ There are currently `r prior_num` barriers on the priority barrier list, which w
 #| warning: false
 #| echo: false
 
-data <- read.csv("data/rehabilitated_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/rehabilitated_barriers.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft

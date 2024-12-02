@@ -54,4 +54,34 @@ ft |> autofit()
 
 ```
 
+## Other Tables {-}
+
+```{r, echo = FALSE, results = 'asis'}
+#| label: tbl-excluded_structures
+#| tbl-cap: "Needs Caption"
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/excluded_structures.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+```
+```{r, echo = FALSE, results = 'asis'}
+#| label: tbl-nonactionable
+#| tbl-cap: "Needs Caption"
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/assessed_strucDD.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+```
 
