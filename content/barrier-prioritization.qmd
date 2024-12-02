@@ -61,7 +61,7 @@ After all existing data and knowledge are collated for known and modelled crossi
 Field assessments are based on the BC Fish Passage Strategic Approach @BCME2014 and can include a barrier assessment (i.e., evaluating passability of the structure), a habitat confirmation (i.e., evaluation of whether the upstream habitat is suitable for the focal species and whether there are other undocumented anthropogenic or natural barriers upstream or downstream), or a detailed habitat investigation (e.g., a fish passage study or further in-depth analysis of habitat features in a waterbody).
 The ranking process accounts for the long-term and immediate potential habitat gains potentially offered by each structure to identify structures that maximize long-term and immediate potential to improve key habitat connectivity in the watershed. All structures in the watershed (excluding those confirmed as passable) are ranked in each iteration of the ranking process. Details of the ranking process used to guide field assessments can be found in [Appendix B](supplimentary-information.qmd).
 
-##Structure Prioritzation Summary {-}
+## Structure Prioritzation Summary {-}
 
 Following field assessments, structures are placed on one of five possible lists: 
 
@@ -71,9 +71,9 @@ Following field assessments, structures are placed on one of five possible lists
 
 3.	Rehabilitated barriers list – priority barriers that have been addressed (either through removal, replacement, or temporary fish passage improvement projects; (@tbl-rehab)) 
 
-4.	Non-actionable barriers list – the structure is confirmed to be a barrier to fish passage and have some amount/quality of habitat upstream, but the planning team will not identify actions to advance rehabilitation of the structure because of logistic considerations (e.g., financial costs), short habitat gain, or the upstream habitat is of poor quality or unsuitable in its present condition to support key life stages of the focal species (Appendix XX).
+4.	Non-actionable barriers list – the structure is confirmed to be a barrier to fish passage and have some amount/quality of habitat upstream, but the planning team will not identify actions to advance rehabilitation of the structure because of logistic considerations (e.g., financial costs), short habitat gain, or the upstream habitat is of poor quality or unsuitable in its present condition to support key life stages of the focal species [Appendix C](data-methods.qmd).
 
-5.	Excluded structures list – the structure is excluded from further consideration in subsequent ranking and work planning because the structure is confirmed passable (e.g., bridge), not present, or there is no key habitat upstream (Appendix XX).
+5.	Excluded structures list – the structure is excluded from further consideration in subsequent ranking and work planning because the structure is confirmed passable (e.g., bridge), not present, or there is no key habitat upstream [Appendix C](data-methods.qmd).
 
 
 ```{r priority, echo = FALSE, results = 'asis'}
