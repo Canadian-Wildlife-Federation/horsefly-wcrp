@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "Horsefly River Watershed Secwepemcúl’ecw Connectivity Remediation Plan: 2021 - 2040"
+  title: "Horsefly River Watershed Secwepemcúl’ecw Connectivity Restoration Plan: 2021 - 2040"
   author: "Canadian Wildlife Federation"
   date: last-modified
   date-format: "DD-MM-YYYY"
@@ -28,7 +28,7 @@ book:
       - icon: save
         menu: 
           - text: Word DOCX
-            url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Remediation-Plan--2021---2040.docx
+            url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Restoration-Plan--2021---2040.docx
 
 
 

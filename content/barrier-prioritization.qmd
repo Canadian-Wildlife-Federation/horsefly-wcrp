@@ -17,12 +17,12 @@ source("Rscripts/table_formatting.R")
 
 ```
 
-# Barrier Prioritization {-}
+# Structure Prioritization {-}
 
 
-## Horsefly River Watershed Barrier Prioritization Summary {-}
+## Horsefly River Watershed Structure Prioritization Summary {-}
 
-The primary conservation outcome of the WCRP will be the remediation of barriers to connectivity in the Horsefly River watershed. To achieve Goal 1 in this plan, it is necessary to prioritize and identify a suite of barriers that, if remediated, will provide access to a minimum of `r gain` km of spawning or rearing habitat (@tbl-table16):
+A primary outcome of the WCRP will be the rehabilitation of barriers to connectivity in the Horsefly River watershed. To achieve the goals in this plan, it is necessary to identify a suite of barriers that, if rehabilitated, will provide access to a minimum of `r gain` key habitat (@tbl-table16).
 
 
 ```{python echo=FALSE}
@@ -57,12 +57,28 @@ styled_df.set_table_styles(table_styles)
 
 ```
 
-The barrier prioritization analysis ranked barriers by the amount of habitat blocked to produce an "intermediate barrier list" comprising more barriers than are needed to achieve the goals. A longer list of barriers is needed due to the inherent assumptions in the connectivity model, habitat model, and gaps in available data. Barriers that have been modelled (i.e., points where streams and road/rail networks intersect) are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model identifies stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability (see Appendix B), which will require additional field verification once barrier assessments have completed. As such, the intermediate list of barriers below (@tbl-deficient) should be considered as a starting point in the prioritization process and represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations. The intermediate barrier list was updated following the barrier assessments and habitat confirmations that were undertaken during the 2021 field season - some barriers were moved forward to the "priority barrier list" (see @tbl-priority) and others were eliminated from consideration due to one or more of the considerations discussed above (see @tbl-remove). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat. Barriers on the priority list were reviewed by planning team members and selected for inclusion for proactive pursual of remediation.  For more details on the barrier prioritization model, please see @Mazany-Wright2021-rz.
+After all existing data and knowledge are collated for known and modelled crossings, an iterative ranking process is conducted to help confirm barriers to target for rehabilitation to meet the goals. The ranking process is primarily used to guide field assessments and maximize efficiency in ground truthing data inputs and model outputs, while providing a secondary purpose to evaluate the relative key habitat gains of confirmed barriers in the watershed. This process, combined with input from local knowledge holders and experts, is used to develop field plans for assessing barriers that have the potential to block the most key habitat in the watershed.
+Field assessments are based on the BC Fish Passage Strategic Approach @BCME2014 and can include a barrier assessment (i.e., evaluating passability of the structure), a habitat confirmation (i.e., evaluation of whether the upstream habitat is suitable for the focal species and whether there are other undocumented anthropogenic or natural barriers upstream or downstream), or a detailed habitat investigation (e.g., a fish passage study or further in-depth analysis of habitat features in a waterbody).
+The ranking process accounts for the long-term and immediate potential habitat gains potentially offered by each structure to identify structures that maximize long-term and immediate potential to improve key habitat connectivity in the watershed. All structures in the watershed (excluding those confirmed as passable) are ranked in each iteration of the ranking process. Details of the ranking process used to guide field assessments can be found in [Appendix B](supplimentary-information.qmd).
+
+##Structure Prioritzation Summary {-}
+
+Following field assessments, structures are placed on one of five possible lists: 
+
+1.	Priority barriers list – the structure is confirmed as a full or partial barrier, has key habitat confirmed to exist upstream, and is considered actionable by the planning team (i.e., action items will be identified to advance rehabilitation of the structure). Depending on the barrier, owner, financial constraints, and quality of upstream habitat, the action may be to leave to end of life cycle before reviewing again, remove and decommission the road, replace with a new passable structure, or modify to temporarily restore connectivity (e.g., fish ladder or baffles installed; (@tbl-priority)).
+
+2.	Assessed structures that remain data deficient list – some form of field assessment has been completed on the structure, but further investigation is required to confirm either the passability status or presence/suitability of upstream habitat (@tbl-deficient).
+
+3.	Rehabilitated barriers list – priority barriers that have been addressed (either through removal, replacement, or temporary fish passage improvement projects; (@tbl-rehab)) 
+
+4.	Non-actionable barriers list – the structure is confirmed to be a barrier to fish passage and have some amount/quality of habitat upstream, but the planning team will not identify actions to advance rehabilitation of the structure because of logistic considerations (e.g., financial costs), short habitat gain, or the upstream habitat is of poor quality or unsuitable in its present condition to support key life stages of the focal species (Appendix XX).
+
+5.	Excluded structures list – the structure is excluded from further consideration in subsequent ranking and work planning because the structure is confirmed passable (e.g., bridge), not present, or there is no key habitat upstream (Appendix XX).
 
 
 ```{r priority, echo = FALSE, results = 'asis'}
 #| label: tbl-priority
-#| tbl-cap: "The Horsefly River watershed priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected to pursue for proactive remediation."
+#| tbl-cap: "The Horsefly River watershed priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected to pursue for proactive rehabilitation."
 #| warning: false
 #| echo: false
 
@@ -88,7 +104,7 @@ ft
 
 ```{r remove, echo = FALSE, results = 'asis'}
 #| label: tbl-remove
-#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive remediation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to remediate because of logistic considerations."
+#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive rehabilitation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to rehabilitate because of logistic considerations."
 #| warning: false
 #| echo: false
 
@@ -100,10 +116,10 @@ ft
 ```
 
 
-Out of the `r inter_num` on the intermediate list, 16 require further field assessment before selection as a final barrier to pursue for remediation: 
+Out of the `r inter_num` on the intermediate list, 16 require further field assessment before selection as a final barrier to pursue for rehabilitation: 
 
 
-There are currently `r prior_num` barriers on the priority barrier list, which will be pursued for proactive remediation to achieve the connectivity goals in this plan:
+There are currently `r prior_num` barriers on the priority barrier list, which will be pursued for proactive rehabilitation to achieve the connectivity goals in this plan:
 
 
 ```{r rehab, echo = FALSE, results = 'asis'}
