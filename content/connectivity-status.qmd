@@ -29,14 +29,14 @@ The current connectivity status was estimated using three spatial models:
 
 1.	Accessibility model: Naturally accessible waterbodies are those that are considered likely accessible to focal species if no human-made barriers existed on the landscape. These were spatially delineated for each focal species using natural barriers (i.e., waterfalls, gradient barriers, or subsurface flows) that would naturally limit upstream movement (@tbl-param).
 
-2.	Habitat model: A subset of the naturally accessible waterbody layer was defined as key habitat, i.e., habitat likely to support spawning or rearing, rather than simply movement corridors. The habitat model identifies areas within waterbodies that have a higher potential to support key habitat based on stream channel gradient and discharge. The habitat model criteria can be found in (@tbl-param).
+2.	Habitat model: A subset of the naturally accessible waterbody layer was defined as key habitat, i.e., habitat likely to support spawning or rearing, rather than simply movement corridors. The habitat model identifies areas within waterbodies that have a higher potential to support key habitat based on stream channel gradient and discharge. The habitat model criteria can be found in Appendix C (@tbl-param).
 
-3.	Connectivity model: A layer of known or modelled structures was overlaid  on the key habitat results. Structures  with unknown passability were treated as a full barrier until confirmed passable by either local knowledge, desktop review, or field assessment. Watershed connectivity was estimated by calculating the amount of key habitat that is connected to the ocean (i.e., not fragmented by human-made barriers). Key habitat with no structures or only passable structures downstream was considered connected. Key habitat upstream of full, partial, or potential barriers was considered disconnected. All connected habitat was summed and divided by the total amount of key habitat in the watershed to arrive at the KEA indicators. Detailed methods for the connectivity model can be found in Appendix C.
+3.	Connectivity model: A layer of known or modelled structures was overlaid  on the key habitat results. Structures  with unknown passability were treated as a full barrier until confirmed passable by either local knowledge, desktop review, or field assessment. Watershed connectivity was estimated by calculating the amount of key habitat that is connected to the ocean (i.e., not fragmented by human-made barriers). Key habitat with no structures or only passable structures downstream was considered connected. Key habitat upstream of full, partial, or potential barriers was considered disconnected. All connected habitat was summed and divided by the total amount of key habitat in the watershed to arrive at the KEA indicators. Detailed methods for the connectivity model can be found in [Appendix C](data-methods.qmd).
 
 
 ```{python echo=FALSE}
 #| label: tbl-connectivity
-#| tbl-cap: "Connectivity status assessment for spawning (a) and rearing (b) habitat in the Bulkley River watershed. The two KEAs - Accessible Spawning Habitat and Accessible Rearing Habitat - are evaluated by dividing the length of linear habitat (of each type) that is currently accessible to focal species by the total length of all linear habitat (of each type) in the watershed."
+#| tbl-cap: "Connectivity status assessment for spawning (a) and rearing (b) habitat in the Bulkley River watershed. The two KEAs - Accessible Spawning Habitat and Accessible Rearing Habitat - are evaluated by dividing the length of linear habitat (of each type) that is currently connected to focal species by the total length of all linear habitat (of each type) in the watershed."
 #| warning: false
 #| echo: false
 
@@ -47,13 +47,13 @@ df
 
 
 
-**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team, including the decision not to define Fair. The current status is based on the CWF Barrier Prioritization Model output, which is current as of March 2022.
+**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team, including the decision not to define Fair. The current status is based on the CWF Barrier Prioritization Model output, which is current as of December 2024.
 
 ```{python echo=FALSE}
 #| warning: false
 #| echo: false
 
-df = conn_table.make_assess_table("Andromous Salmon", "Available Overwintering Habitat", "Total Area (m2) of overwintering habitat accessible", "?", " ?", "? ", api.connect)
+df = conn_table.make_assess_table("Andromous Salmon", "Available Overwintering Habitat", "Total Area (m2) of overwintering habitat connected", "?", " ?", "? ", api.connect)
 df
 
 
@@ -71,8 +71,8 @@ df
 #| warning: false
 #| echo: false
 df = pd.DataFrame({"Goal #": [1,2],
-                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from " + str(api.connect)+"% " + " to 96% within the Horsefly River watershed (i.e., reconnect at least "+ str(api.gain) +" km of habitat).",
-                            "By 2024, the total area of overwintering habitat accessible to Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
+                   "Goal": ["By 2040, the percent (%) of total linear habitat connected for anadromous salmon will increase from " + str(api.connect)+"% " + " to 96% within the Horsefly River watershed (i.e., reconnect at least "+ str(api.gain) +" km of habitat).",
+                            "By 2024, the total area of overwintering habitat connected for Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
                     })
 
 data = df.style.hide().set_properties(**{'text-align': 'left'})

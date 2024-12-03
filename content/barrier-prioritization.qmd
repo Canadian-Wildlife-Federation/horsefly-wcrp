@@ -27,7 +27,7 @@ A primary outcome of the WCRP will be the rehabilitation of barriers to connecti
 
 ```{python echo=FALSE}
 #| label: tbl-table16
-#| tbl-cap: "Spawning and rearing habitat connectivity gain requirements to meet WCRP goals in the Horsefly River watershed. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model described in Appendix B."
+#| tbl-cap: "Spawning and rearing habitat connectivity gain requirements to meet WCRP goals in the Horsefly River watershed. The measures of currently connected and total habitat values are derived from the Intrinsic Potential habitat model described in Appendix B."
 #| warning: false
 #| echo: false
 
@@ -39,8 +39,8 @@ gain = round((total*0.96)-access,2)
 
 # Data frame with table info
 df = pd.DataFrame({"Habitat Type":["Spawning and Rearing"],
-                   "Currently accessible (km)":[str(access)],
-                   "Total": [str(total)],
+                   "Currently connected (km)":[str(access)],
+                   "Total (km)": [str(total)],
                    "Current Connectivity Status":[str(connect)+"%"],
                    "Goal": ["96%"],
                    "Gain required (km)": [str(gain)]
@@ -58,7 +58,8 @@ styled_df.set_table_styles(table_styles)
 ```
 
 After all existing data and knowledge are collated for known and modelled crossings, an iterative ranking process is conducted to help confirm barriers to target for rehabilitation to meet the goals. The ranking process is primarily used to guide field assessments and maximize efficiency in ground truthing data inputs and model outputs, while providing a secondary purpose to evaluate the relative key habitat gains of confirmed barriers in the watershed. This process, combined with input from local knowledge holders and experts, is used to develop field plans for assessing barriers that have the potential to block the most key habitat in the watershed.
-Field assessments are based on the BC Fish Passage Strategic Approach @BCME2014 and can include a barrier assessment (i.e., evaluating passability of the structure), a habitat confirmation (i.e., evaluation of whether the upstream habitat is suitable for the focal species and whether there are other undocumented anthropogenic or natural barriers upstream or downstream), or a detailed habitat investigation (e.g., a fish passage study or further in-depth analysis of habitat features in a waterbody).
+Field assessments are based on the BC Fish Passage Strategic Approach @BCME2014 and can include a barrier assessment (i.e., evaluating passability of the structure), a habitat confirmation (i.e., evaluation of whether the upstream habitat is suitable for the focal species and whether there are other undocumented man-made or natural barriers upstream or downstream), or a detailed habitat investigation (e.g., a fish passage study or further in-depth analysis of habitat features in a waterbody).
+
 The ranking process accounts for the long-term and immediate potential habitat gains potentially offered by each structure to identify structures that maximize long-term and immediate potential to improve key habitat connectivity in the watershed. All structures in the watershed (excluding those confirmed as passable) are ranked in each iteration of the ranking process. Details of the ranking process used to guide field assessments can be found in [Appendix B](supplimentary-information.qmd).
 
 ## Structure Prioritzation Results {-}
@@ -69,7 +70,7 @@ Following field assessments, structures are placed on one of five possible lists
 
 2.	Assessed structures that remain data deficient list – some form of field assessment has been completed on the structure, but further investigation is required to confirm either the passability status or presence/suitability of upstream habitat (@tbl-deficient).
 
-3.	Rehabilitated barriers list – priority barriers that have been addressed (either through removal, replacement, or temporary fish passage improvement projects; (@tbl-rehab)) 
+3.	Rehabilitated barriers list – priority barriers that have been addressed (either through removal, replacement, or temporary fish passage improvement projects; (@tbl-rehab)).
 
 4.	Non-actionable barriers list – the structure is confirmed to be a barrier to fish passage and have some amount/quality of habitat upstream, but the planning team will not identify actions to advance rehabilitation of the structure because of logistic considerations (e.g., financial costs), short habitat gain, or the upstream habitat is of poor quality or unsuitable in its present condition to support key life stages of the focal species [Appendix C](data-methods.qmd).
 
