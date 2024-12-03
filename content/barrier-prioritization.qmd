@@ -61,7 +61,7 @@ After all existing data and knowledge are collated for known and modelled crossi
 Field assessments are based on the BC Fish Passage Strategic Approach @BCME2014 and can include a barrier assessment (i.e., evaluating passability of the structure), a habitat confirmation (i.e., evaluation of whether the upstream habitat is suitable for the focal species and whether there are other undocumented anthropogenic or natural barriers upstream or downstream), or a detailed habitat investigation (e.g., a fish passage study or further in-depth analysis of habitat features in a waterbody).
 The ranking process accounts for the long-term and immediate potential habitat gains potentially offered by each structure to identify structures that maximize long-term and immediate potential to improve key habitat connectivity in the watershed. All structures in the watershed (excluding those confirmed as passable) are ranked in each iteration of the ranking process. Details of the ranking process used to guide field assessments can be found in [Appendix B](supplimentary-information.qmd).
 
-## Structure Prioritzation Summary {-}
+## Structure Prioritzation Results {-}
 
 Following field assessments, structures are placed on one of five possible lists: 
 
@@ -101,26 +101,6 @@ ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
 ```
-
-```{r remove, echo = FALSE, results = 'asis'}
-#| label: tbl-remove
-#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive rehabilitation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to rehabilitate because of logistic considerations."
-#| warning: false
-#| echo: false
-
-
-data <- read.csv("data/excluded_structures_table.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- format_flextable(ft)
-ft
-```
-
-
-Out of the `r inter_num` on the intermediate list, 16 require further field assessment before selection as a final barrier to pursue for rehabilitation: 
-
-
-There are currently `r prior_num` barriers on the priority barrier list, which will be pursued for proactive rehabilitation to achieve the connectivity goals in this plan:
-
 
 ```{r rehab, echo = FALSE, results = 'asis'}
 #| label: tbl-rehab
