@@ -1,3 +1,10 @@
+```{r setup, include=FALSE}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+```
+
 <!-- # Horsefly River Watershed Secwepemcúl’ecw Connectivity Restoration Plan: 2021 - 2040 {-} -->
 
 # Supplementary Information {-}

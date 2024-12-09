@@ -1,0 +1,238 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "<!-- # Horsefly River Watershed Secwepemcúl’ecw Connectivity Restoration Plan: 2021 - 2040 {-} -->\n",
+        "\n",
+        "# Supplementary Information {-}\n",
+        "\n",
+        "## Situation Analysis {-}\n",
+        "\n",
+        "The following situation model was developed by the WCRP planning team to “map” the project context and brainstorm potential actions for implementation. Green text is used to identify actions that were selected for implementation (see Strategies & Actions), and red text is used to identify actions that the project team has decided to exclude from the current iteration of the plan, as they were either outside of the project scope, or were deemed to be ineffective by the planning team. \n",
+        "\n",
+        "![Situation analysis developed by the planning team to identify factors that contribute to fragmentation (orange boxes), biophysical results (brown boxes), and potential strategies/actions to improve connectivity (yellow hexagons) for focal species in the Horsefly River watershed.](images/situation-analysis.png){#fig-sitan}\n",
+        "\n",
+        "## Strategies & Actions {-}\n",
+        "\n",
+        "Effectiveness evaluation of identified conservation strategies and associated actions to improve connectivity for focal species in the Horsefly River watershed. The planning team identified five broad strategies to implement through this WCRP, 1) crossing rehabilitation, 2) lateral barrier rehabilitation, 3) dam Rehabilitation, 4) barrier prevention, and 5) communication and education. Individual actions were qualitatively evaluated based on the anticipated effect each action will have on realizing on-the-ground gains in connectivity. Effectiveness ratings are based on a combination of \"Feasibility and \"Impact\", Feasibility is defined as the degree to which the project team can implement the action within realistic constraints (financial, time, ethical, etc.) and Impact is the degree to which the action is likely to contribute to achieving one or more of the goals established in this plan.\n",
+        "\n",
+        "## Strategy 1: Crossing Rehabilitation {-}\n"
+      ],
+      "id": "5fb6a05d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-S1\n",
+        "#| tbl-cap: Strategy 1\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "import numpy as np\n",
+        "from IPython.display import display\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = pd.read_csv('data/strategy-crossing-remediation.csv', index_col=False, skip_blank_lines=False )\n",
+        " \n",
+        "def fix_table(val):\n",
+        "    return str(val)\n",
+        "\n",
+        "def highlighttab7(val):\n",
+        "    red = '#ff0000;'\n",
+        "    yellow = '#ffff00;'\n",
+        "    lgreen = '#92d050;'\n",
+        "    dgreen = '#03853e;'\n",
+        "\n",
+        "    if val==\"Medium\" or val==\"Need more information\": color = yellow\n",
+        "    elif val==\"Very high\" or val==\"Very effective\" : color = lgreen\n",
+        "    elif val ==\"High\" or val==\"Effective\": color = dgreen\n",
+        "    else: color = 'white'\n",
+        "    return 'background-color: %s' % color\n",
+        "\n",
+        "data = data.replace(np.nan, '', regex=True)\n",
+        "\n",
+        "data = data.applymap(fix_table)\n",
+        "\n",
+        "data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})\n",
+        "data.set_table_styles(\n",
+        "   [{\n",
+        "       'selector': 'th',\n",
+        "       'props': [('background-color', '#008270'),('text-align', 'left')]\n",
+        "   }])"
+      ],
+      "id": "tbl-S1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Strategy 2: Lateral Barrier Rehabilitation {-}\n"
+      ],
+      "id": "76c9ed70"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-S2\n",
+        "#| tbl-cap: Strategy 2\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "data = pd.read_csv('data/strategy-lateral-barrier-remediation.csv', escapechar='\\n', index_col=False)\n",
+        "\n",
+        "data = data.replace(np.nan, '', regex=True)\n",
+        "\n",
+        "data = data.applymap(fix_table)\n",
+        "\n",
+        "data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})\n",
+        "\n",
+        "data.set_table_styles(\n",
+        "   [{\n",
+        "       'selector': 'th',\n",
+        "       'props': [('background-color', '#008270'),('text-align', 'left')]\n",
+        "   }])"
+      ],
+      "id": "tbl-S2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Strategy 3: Dam Rehabilitation {-}\n"
+      ],
+      "id": "52550636"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-S3\n",
+        "#| tbl-cap: Strategy 3\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "data = pd.read_csv('data/strategy-dam-remediation.csv', index_col=False)\n",
+        "\n",
+        "data = data.replace(np.nan, '', regex=True)\n",
+        "\n",
+        "data = data.applymap(fix_table)\n",
+        "\n",
+        "data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})\n",
+        "\n",
+        "data.set_table_styles(\n",
+        "   [{\n",
+        "       'selector': 'th',\n",
+        "       'props': [('background-color', '#008270'),('text-align', 'left')]\n",
+        "   }])"
+      ],
+      "id": "tbl-S3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Strategy 4: Barrier Prevention {-}\n"
+      ],
+      "id": "4cd3dd54"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-S4\n",
+        "#| tbl-cap: Strategy 4\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = pd.read_csv('data/strategy-barrier-prevention.csv', index_col=False)\n",
+        "\n",
+        "data = data.applymap(fix_table)\n",
+        "\n",
+        "data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})\n",
+        "\n",
+        "data.set_table_styles(\n",
+        "   [{\n",
+        "       'selector': 'th',\n",
+        "       'props': [('background-color', '#008270'),('text-align', 'left')]\n",
+        "   }])"
+      ],
+      "id": "tbl-S4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Strategy 5: Communication and Education {-}\n"
+      ],
+      "id": "b1161bea"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-S5\n",
+        "#| tbl-cap: Strategy 5\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "data = pd.read_csv('data/strategy-comm-edu.csv', index_col=False)\n",
+        "\n",
+        "data = data.replace(np.nan, '', regex=True)\n",
+        "\n",
+        "data = data.applymap(fix_table)\n",
+        "\n",
+        "data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})\n",
+        "\n",
+        "data.set_table_styles(\n",
+        "   [{\n",
+        "       'selector': 'th',\n",
+        "       'props': [('background-color', '#008270'),('text-align', 'left')]\n",
+        "   }])"
+      ],
+      "id": "tbl-S5",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Theories of Change & Objectives {-}\n",
+        "\n",
+        "Theories of Change are explicit assumptions around how the identified actions will achieve gains in connectivity and contribute towards reaching the goals of the plan. To develop Theories of Change, the planning team developed explicit assumptions for each strategy which helped to clarify the rationale used for undertaking actions and provided an opportunity for feedback on invalid assumptions or missing opportunities. The Theories of Change are results oriented and clearly define the expected outcome. The following theory of change models were developed by the WCRP planning team to “map” the causal (“if-then”) progression of assumptions of how the actions within a strategy work together to achieve project goals. \n",
+        "\n",
+        "![Theory of change developed by the planning team for the actions identified under Strategy 1: Crossing Rehabilitation in the Horsefly River watershed.](images/flowchart-crossing-rem.png){#fig-stra1}\n",
+        "\n",
+        "![Theory of change developed by the planning team for the actions identified under Strategy 2: Lateral Barrier Rehabilitation in the Horsefly River watershed.](images/flowchart-lat-bar-rem.png){#fig-stra2}\n",
+        "\n",
+        "![Theory of change developed by the planning team for the actions identified under Strategy 3: Dam Rehabilitation in the Horsefly River watershed.](images/flowchart-dam-rem.png){#fig-stra3}\n",
+        "\n",
+        "![Theory of change developed by the planning team for the actions identified under Strategy 4: Barrier Prevention in the Horsefly River watershed.](images/flowchart-bar-prevent.png){#fig-stra4}"
+      ],
+      "id": "afad2bc0"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
