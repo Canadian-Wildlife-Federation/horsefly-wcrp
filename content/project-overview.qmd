@@ -272,7 +272,7 @@ There are numerous types of lateral barriers that potentially occur in the water
 
 ### Small Dams (<3 m height) {-}
 
-There are `r num_dam` mapped small dams on naturally accessible waterbodies in the watershed, blocking a total of `r km_dam` km (~`r pct_dam`% of the total habitat) of modelled spawning and rearing habitat for anadromous salmon, resulting in a medium extent. The extent rating of these structures was confirmed by the planning team. There are two known fish-passage structures in the watershed, including on the dam at the outlet of McKinley Lake. The remaining dams likely block passage for anadromous salmon and would require significant resources to rehabilitate. However, due to the limited extent of dams in the watershed, a final pressure rating of Medium was assigned.
+Initially, `r num_dam` mapped small dams were identified in the watershed that had upstream modelled spawning or rearing habitat for key species. Field assessments were conducted in 2021 and 2022, and 5 of the mapped dams were identified as presenting no barrier to fish passage because they did not exist, were off channel, or had no suitable key habitat upstream (see @tbl-excluded_structures). The remaining dam, at the outlet of McKinley Lake is equipped with a fishway that provides passage for salmon. The effectiveness of the fishway on the McKinley Lake dam is unknown, and further study to assess fish passage efficiency is recommended (see @tbl-S3).
 
 ### Trail-stream Crossings{-}
 
