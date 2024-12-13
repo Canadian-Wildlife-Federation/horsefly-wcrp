@@ -22,7 +22,7 @@ source("Rscripts/table_formatting.R")
 
 ## Field Assessment Ranking Process {-}
 
-A primary outcome of the WCRP will be the rehabilitation of barriers to connectivity in the Horsefly River watershed. To achieve Goal 1 in this plan, it is necessary to identify a suite of barriers that, if rehabilitated, will provide access to a minimum of `r gain` key habitat (@tbl-table16).
+A primary outcome of the WCRP will be the rehabilitation of barriers to connectivity in the Horsefly River watershed. To achieve Goal 1 in this plan, it is necessary to identify a suite of barriers that, if rehabilitated, will provide access to a minimum of `r gain` km of key habitat (@tbl-table16).
 
 
 ```{python echo=FALSE}
