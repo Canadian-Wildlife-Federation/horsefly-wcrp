@@ -1,0 +1,20 @@
+# Appendix B – Partners and Detailed Methods  {-}
+
+## Planning and Detailed Mathods  {-}
+Table 14: Horsefly River Secwepemcúl’ecw WCRP Planning Team members. Planning Team members contributed to the development of this plan by participating in scoping and planning meetings, and reviewing documents and data. 
+Table 15: Additional key actors in the Horsefly River watershed. Key actors are the individuals, groups, and/or organizations beyond the Planning Team with influence and relevant experience. Their engagement will be critical for the successful implementation of this WCRP. Key actors were identified by the Planning Team and have not necessarily committed to contributing to the implementation and updating of this WCRP. 
+
+```{r echo = FALSE}
+#| label: table-6
+#| tbl-cap: "Tuzist’ol T’ah WCRP working group. Working group members contributed to the development of this plan by participating in scoping and planning meetings, and reviewing documents and data."
+#| warning: false
+source("Rscripts/table_formatting.R")
+data <- read.csv("data/table6.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+## Detailed Methods {-}
+
+For details about accessibility, habitat, or connectivity models including structure-ranking methods, see detailed documentation for BCFishPass here:[NSFishPass GitHub](https://github.com/Canadian-Wildlife-Federation/bcfishpass)

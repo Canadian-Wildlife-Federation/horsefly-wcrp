@@ -1,59 +1,19 @@
-# Work Planning 
+# Work Planning {-}
 
-## Annual Work Plan {-}
+## Structure Ranking Context {-}
 
-```{r keyact, echo = FALSE, results = 'asis'}
-#| label: tbl-progress
-#| tbl-cap: "2024-2025 Work Plan"
-#| warning: false
+Structures are primarily ranked to inform field-assessment planning. Higher-ranked structures contribute greater potential toward habitat connectivity restoration and are therefore typically higher priorities for field assessment. They also represent key knowledge gaps with potential to significantly affect model results. Estimates of current connectivity status could improve considerably, for instance, if many high-ranking structures are passable or do not have habitat upstream. Habitat accumulation curves support decision making around how many and which structures should be assessed, by showing which structures may only minimally affect connectivity. High-ranked structures with minimal habitat upstream may be located low on these curves, because they must be addressed before benefits can be achieved by addressing lower-ranked barriers with more upstream habitat. 
 
-library("flextable")
+If confirmed as barriers, high-ranking structures are also often priorities for further field assessments to confirm upstream habitat before decisions are made about where fish passage should be rehabilitated.  
 
-data <- read.csv("data/progress.csv", check.names=FALSE)
-ft <- flextable(data)
+Once field assessments are completed, management decisions are made for each assessed structure. An assessed structure may be excluded from the model if it is passable or there is no habitat upstream, or it may be listed as a priority barrier for fish-passage rehabilitation. Alternatively, some structures confirmed as barriers may be considered “non-actionable” because the amount and quality of habitat upstream may be low and the costs of rehabilitation may be high relative to those limited potential benefits. 
 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
-```
-
-## Annual Progress Updates {-}
-CWF continues to work with barrier owners to advance rehabilitation of priority barriers. Tolko Industries Ltd. has completed barrier rehabilitation on 126511 Tributary to Horsefly River and 126594 Niquidet Creek, with further plans to rehabilitate crossings on 57298 Boscar Creek and 57158 McKinley Creek in the near future. CWF continues to work with the B.C. Ministry of Transportation and Infrastructure to try to advance rehabilitation designs for Vedder and Wilmot creeks. CWF attended the 2023 Horsefly Salmon Festival, where they shared an interactive art display to communicate the fish passage efforts in the watershed. Other program partners were also in attendance to educate the public about various aspects of salmon and conservation taking place in the watershed. The Williams Lake First Nation worked with the B.C. Ministry of Forests to review and identify potential barriers for rehabilitation in the upper portions of the Horsefly River watershed, with some tentative sites for rehabilitation identified that are currently being explored.
-
-## Operational Plan {-}
-
-The operational plan represents a preliminary exercise undertaken by the planning team to identify the potential leads, potential participants, and estimated cost for the implementation of each action in the Horsefly River watershed. @tbl-opplan summarizes individuals, groups, or organizations that the planning team felt could lead or participate in the implementation of the plan and should be interpreted as the first step in on-going planning and engagement to develop more detailed and sophisticated action plans for each entry in the table. The individuals, groups, and organizations listed under the "Lead(s)" or "Potential Participants" columns are those that provisionally expressed interest in participating in one of those roles or were suggested by the planning team for further engagement (denoted in bold), for those that are not members of the planning team. The leads, participants, and estimated costs in the operational plan are not binding nor an official commitment of resources, but rather provide a roadmap for future coordination and engagement during WCRP implementation.
+Model ranks provide only limited information on the relative value of rehabilitation among priority barriers. Ranks convey only the relative amount of habitat upstream and do not represent other factors relevant to restoration prioritization, such as habitat quality, cost, social priorities, or logistical constraints and opportunities. Deciding which priority barriers to address first is a social decision-making process that is only partially informed by model outputs. Model outputs also provide broader context about how many structures exist in the system, how many have been identified as priority barriers, and how much habitat is upstream of each relative to others. 
 
 
-`{\tiny`{=latex}
-```{python opplan, echo=FALSE}
-#| label: tbl-opplan
-#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for focal species in the Horsefly River watershed."
-#| warning: false
-#| echo: false
+## Workplan {-}
 
-from IPython.display import display
-import pandas as pd
-import numpy as np
+The 2026-2027 work plan is currently being determined. This section will be updated once finalized. 
 
 
-def df_operation(val):
-    return "background-color: black; color: white"
 
-
-data = pd.read_csv('data/operational-plan.csv', index_col=False)
-
-data = data.replace(np.nan, '', regex=True)
-
-rows = pd.IndexSlice[[0,10,16,23,26,29,30,31], :]
-
-data = data.style.applymap(df_operation, subset=rows).hide().set_properties(**{'text-align': 'left'})
-data.set_table_styles(
-   [{
-       'selector': 'th',
-       'props': [('background-color', '#008270'),('text-align', 'left')]
-   }])
-
-```
-`}`{=latex}

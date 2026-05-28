@@ -1,0 +1,30 @@
+# Progress Reporting {-}
+
+## Progress Reporting {-}
+
+This WCRP was initiated in 2020. Since then, the passability of 100 structures has been assessed, and further habitat assessments were completed at 29 of these. Fish passage has been rehabilitated at 4 barriers: a culvert was removed and road deactivated on Boscar Lake Creek, and culverts on Niquidet Creek, an unnamed tributary to Bosk Lake, and an unnamed tributary to Horsefly River were replaced with clearspan bridges. This has resulted in improved or restored access to 4 km of spawning and rearing habitat (Table 9). Lateral (side channel and off-channel) connectivity and thermal refugia were also assessed in a portion of the mainstem Horsefly River in 2022 by the Horsefly River Roundtable, Northern Shuswap Tribal Council and Williams Lake First Nation, and fish passage at 14 trail-stream crossings was also completed by the Williams Lake First Nation in 2022.   
+
+
+## Rehabilitated Barriers {-}
+Table 9: Barriers to Pacific salmon in the Horsefly River watershed that have been addressed (either through removal, replacement, or modification to improve passage) as of May 2026. Habitat gain represents the amount (km) of upstream habitat that was reconnected by these projects. 
+
+
+## Annual Progress Report {-}
+
+Since April 2024, the following actions were completed:  
+
+- Barrier assessments were completed for 29 structures, resulting in 6 structures confirmed as barriers and 16 structures excluded as passable or non-existent, or because there was no habitat upstream and 7 barriers confirmed as non-actionable due to low-quality habitat.  
+
+- Habitat confirmations were completed at 2 barriers, resulting in 1 being identified as a priority barrier, and 1remaining as a data-deficient structure with next step in-depth barrier assessment, to determine whether crossing is a seasonal barrier during freshet for juveniles or fall for adults. 
+
+- CWF worked with Riversheds Society to complete landowner outreach in the Horsefly River watershed, targeting landowners who either were responsible for barriers identified in the watershed or unassessed crossings in need of barrier status and habitat quality assessments.  
+
+- Fish passage was rehabilitated at crossing 57298 Tributary to Bosk Lake by Tolko Industries Ltd., resulting in improved or restored access to 0.08 km of spawning and rearing habitat and which, combined with the removal of crossing 57168 Tributary to Boscar Lake Creek in 2022, has resulted in improved or restored access to 1.13 km of habitat in the Bosk Lake system. 
+
+- A Planning Team workshop was held in January 2026 to review field findings and determine next steps for identified barriers. 
+
+- The connectivity model was updated based on the above actions, and outputs were incorporated into this WCRP. 
+
+
+## Priority Barriers {-}
+Table 10: Structures in the Horsefly River watershed that are confirmed as barriers to fish passage for Pacific salmon with confirmed habitat upstream, as of May 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity.  

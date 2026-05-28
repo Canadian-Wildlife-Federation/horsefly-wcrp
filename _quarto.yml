@@ -3,32 +3,27 @@ project:
   output-dir: _book
 
 book:
-  title: "Horsefly River Watershed Secwepemcúl’ecw Connectivity Restoration Plan: 2021 - 2040"
+  title: "Stewiacke Watershed Connectivity Restoration Plan (WCRP)"
   author: "Canadian Wildlife Federation"
   date: last-modified
   date-format: "DD-MM-YYYY"
   chapters:
     - index.qmd
     - content/project-overview.qmd
+    - content/glossary.qmd
+    - content/methods.qmd
     - content/connectivity-status.qmd
-    - content/barrier-prioritization.qmd
     - content/work-planning.qmd
+    - content/progress-reporting.qmd
     - content/references.qmd
-    - content/version-history.qmd
   appendices: 
-    - content/project-partners.qmd
-    - content/supplementary-information.qmd 
-    - content/data-methods.qmd
+    - content/appendix-a.qmd
+    - content/appendix-b.qmd 
   
   
   sidebar: 
     pinned: true
     logo: images/logo.png
-    tools: 
-      - icon: save
-        menu: 
-          - text: Word DOCX
-            url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Restoration-Plan--2021---2040.docx
 
 
 
@@ -41,7 +36,8 @@ format:
   html:
     css: style.css
     theme: cosmo
-    toc-title: "HORS WCRP"
+    toc: false
+    fig-cap-location: top
     crossref:
       fig-title: '**Figure**'
       tbl-title: '**Table**'

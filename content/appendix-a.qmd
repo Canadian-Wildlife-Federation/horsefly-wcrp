@@ -1,0 +1,44 @@
+# Appendix A – Status of Structures Assessed in the Field {-}
+
+## Non-Actionable Barriers
+Table 11: Structures in Horsefly River watershed that are confirmed as barriers to fish passage for Pacific salmon as of May 2026 but have been identified by the Planning Team as non-actionable due to either logistic considerations (e.g., financial costs) or low-quality upstream habitat. 
+
+
+## Data-deficient Barriers {-}
+Table 12: Structures in Horsefly River watershed that have been assessed for fish passage for Pacific salmon as of May 2026 but either require an additional in-depth fish-passage assessment to confirm the passability status or a habitat assessment to confirm upstream habitat values.  
+
+```{r table4, echo = FALSE, results = 'asis'}
+#| label: table-4
+#| tbl-cap: "Structures in the Tuzist’ol T’ah watersheds that have been assessed for fish passage for Talo and Chinook Salmon as of May 2026, but either require an additional in-depth fish-passage assessment to confirm the passability status or a habitat assessment to confirm upstream habitat values. "
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/table4.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+
+## Excluded Structures {-}
+Table 13: Structures in Horsefly River watershed that are excluded from further consideration in subsequent ranking and work planning because the structure is not present, is confirmed passable (e.g., bridge), or has no habitat upstream for Pacific salmon.  
+
+```{r table5, echo = FALSE, results = 'asis'}
+#| label: table-5
+#| tbl-cap: "Structures in the Tuzist’ol T’ah watersheds that are excluded from further consideration in subsequent ranking and work planning because the structure is not present, is confirmed passable (e.g., bridge), or has no habitat upstream for Talo or Chinook Salmon. "
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/table5.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+
+
+
