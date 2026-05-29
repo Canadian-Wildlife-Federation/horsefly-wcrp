@@ -6,8 +6,20 @@ This WCRP was initiated in 2020. Since then, the passability of 100 structures h
 
 
 ## Rehabilitated Barriers {-}
-Table 9: Barriers to Pacific salmon in the Horsefly River watershed that have been addressed (either through removal, replacement, or modification to improve passage) as of May 2026. Habitat gain represents the amount (km) of upstream habitat that was reconnected by these projects. 
 
+```{r tbl9, echo = FALSE, results = 'asis'}
+#| label: tbl9
+#| tbl-cap: "Table 9: Barriers to Pacific salmon in the Horsefly River watershed that have been addressed (either through removal, replacement, or modification to improve passage) as of May 2026. Habitat gain represents the amount (km) of upstream habitat that was reconnected by these projects."
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/Table9_hors_rehabilitated_barriers.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
 
 ## Annual Progress Report {-}
 
@@ -27,4 +39,17 @@ Since April 2024, the following actions were completed:
 
 
 ## Priority Barriers {-}
-Table 10: Structures in the Horsefly River watershed that are confirmed as barriers to fish passage for Pacific salmon with confirmed habitat upstream, as of May 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity.  
+
+```{r tbl10, echo = FALSE, results = 'asis'}
+#| label: tbl10
+#| tbl-cap: "Table 10: Structures in the Horsefly River watershed that are confirmed as barriers to fish passage for Pacific salmon with confirmed habitat upstream, as of May 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity."
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/Table10_hors_priority_barriers.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```

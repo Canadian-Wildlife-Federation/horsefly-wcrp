@@ -1,6 +1,6 @@
 
 
-# Connectivity Status Results {-}
+# Key Ecological Attributes and Connectivity Status Results {-}
 
 ## Current Connectivity Status {-}
 
@@ -8,59 +8,114 @@ The Planning Team identified two Key Ecological Attributes (KEAs) to assess the 
 
 To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1) any modelled (i.e., the passability status is unknown) or partial barriers are treated as complete barriers to passage and 2) the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status is refined over time as more data on habitat and barriers are collected. 
 
-Table 6: Connectivity status assessment for spawning and rearing (a) and overwintering (b) habitat in the Horsefly River watershed.  
+```{r api-values, echo = FALSE, results = 'hide'}
+library("reticulate")
+source_python("python/api_calls_v2.py")
+
+connected_km <- get_metric_value("HORS", "accessible_spawningrearing_all")
+disconnected_km <- get_metric_value("HORS", "disconnected_spawningrearing_all")
+total_km <- get_metric_value("HORS", "total_spawningrearing_all")
+connected_pct <- round((connected_km / total_km) * 100, 1)
+
+potentially_disconnect_structures <- get_structure_count_value(
+  "hors", "all_spawningrearing", "structures_that_potentially_disconnect_habitat"
+)
+priority_barriers <- get_structure_count_value(
+  "hors", "all_spawningrearing", "priority_barriers"
+)
+non_actionable_barriers <- get_structure_count_value(
+  "hors", "all_spawningrearing", "non_actionable_barriers"
+)
+further_field_assessment <- get_structure_count_value(
+  "hors", "all_spawningrearing", "require_further_assessment"
+)
+```
+
+```{r tbl6a, echo = FALSE, results = 'asis'}
+#| label: tbl6a
+#| tbl-cap: "Table 6: Connectivity status assessment for spawning and rearing (a) and overwintering (b) habitat in the Horsefly River watershed. <br> A"
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/table6a.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, j = "Poor", bg = "#ff0000", part = "body")
+ft <- bg(ft, j = "Fair", bg = "#ffff00", part = "body")
+ft <- bg(ft, j = "Good", bg = "#92d050", part = "body")
+ft <- bg(ft, j = "Very Good", bg = "#008000", part = "body")
+ft <- format_flextable(ft)
+ft
+```
+
 Comments: Indicator rating definitions are based on the consensus decisions of the Planning Team, including the decision not to define Fair. The current status is based on the connectivity model output, which is current as of May 2026. 
+```{r tbl6b, echo = FALSE, results = 'asis'}
+#| label: tbl6b
+#| tbl-cap: "B"
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/table6b.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, j = "Poor", bg = "#ff0000", part = "body")
+ft <- bg(ft, j = "Fair", bg = "#ffff00", part = "body")
+ft <- bg(ft, j = "Good", bg = "#92d050", part = "body")
+ft <- bg(ft, j = "Very Good", bg = "#008000", part = "body")
+ft <- format_flextable(ft)
+ft
+```
 Comments: No baseline data exists on the extent of overwintering habitat in the watershed. A priority action is included in the Operational Plan (strategy 2.3) to develop a habitat layer, and this will be used to inform this connectivity status assessment in the future. 
 
-In the Horsefly River watershed, X km of Pacific salmon spawning and rearing habitat are currently connected to the ocean and X km are disconnected from it. This means that X% of the X km of total habitat is connected. 
+In the Horsefly River watershed, `r connected_km` km of Pacific salmon spawning and rearing habitat are currently connected to the ocean and `r disconnected_km` km are disconnected from it. This means that `r connected_pct`% of the `r total_km` km of total habitat is connected. 
 
 ## Goals {-}
+```{r tbl7, echo = FALSE, results = 'asis'}
+#| label: tbl7
+#| tbl-cap: "Table 7: Goals to improve (1) spawning and rearing and (2) overwintering habitat connectivity for focal species in the Horsefly River watershed over the lifespan of the WCRP (2021-2040). The goals were established through discussions with the Planning Team and represent the resulting desired state of connectivity in the watershed. The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments)."
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+data <- read.csv("data/table7.csv", check.names=FALSE)
 
-Table 7: Goals to improve (1) spawning and rearing and (2) overwintering habitat connectivity for focal species in the Horsefly River watershed over the lifespan of the WCRP (2021-2040). The goals were established through discussions with the Planning Team and represent the resulting desired state of connectivity in the watershed. The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments). 
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
 
 
 ## Structure Count {-}
 
-In the Horsefly River watershed, X structures potentially disconnect Pacific salmon spawning or rearing habitat. Of these, X are identified as barriers in need of rehabilitation (priority barriers), X are identified as barriers that do not warrant rehabilitation (non-actionable), and X require further field assessment. 
+In the Horsefly River watershed, `r potentially_disconnect_structures` structures potentially disconnect Pacific salmon spawning or rearing habitat. Of these, `r priority_barriers` are identified as barriers in need of rehabilitation (priority barriers), `r non_actionable_barriers` are identified as barriers that do not warrant rehabilitation (non-actionable), and `r further_field_assessment` require further field assessment. 
 
 
 ## Maps {-}
-
-Figure 1: Map of Pacific salmon spawning and rearing habitat and structures that are confirmed or potential barriers to fish passage in the Horsefly River watershed as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more species of Pacific salmon could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more species of Pacific salmon for spawning or rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures). Barriers that were rehabilitated through implementation of this plan are shown, but other excluded structures (e.g., those found to be passable) are not. 
+![Figure 1: Map of Pacific salmon spawning and rearing habitat and structures that are confirmed or potential barriers to fish passage in the Horsefly River watershed as of May 2026. Structure data were obtained from BCFishPass and the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that one or more species of Pacific salmon could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by one or more species of Pacific salmon for spawning or rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be fully disconnected (upstream of barriers or unassessed structures). Barriers that were rehabilitated through implementation of this plan are shown, but other excluded structures (e.g., those found to be passable) are not. ](images/Fig1_Map.png){fig-cap-location="top"}
 
 
 ## Habitat Accumulation Curves
+![Figure 2: Habitat Accumulation Curve (HAC) showing structures in the Horsefly River watershed as of May 2026. Structures are ranked based on how much (km) habitat for spawning or rearing is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan.](images/Fig_2_HORS_HAC.png){fig-cap-location="top"}
 
-Figure 2: Habitat Accumulation Curve (HAC) showing structures in the Horsefly River watershed as of May 2026. Structures are ranked based on how much (km) habitat for spawning or rearing is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan. 
+ 
 
 
 ## Habitat Accumulation Summary Table
-Table 8: Labelled structures in the Habitat Accumulation Curve (Error! Reference source not found.), their rank, and upstream spawning and rearing habitat for Pacific salmon in the Horsefly River watershed. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored.  
 
-```{r hac1, echo = FALSE, results = 'asis'}
-#| label: table-1
-#| tbl-cap: "Table 1. Labelled structures in the Habitat Accumulation Curve (Figure 3), their rank, and weighted upstream habitat for Atlantic Salmon in the Stewiacke watershed. Weighted Habitat Gain per Set represents the amount (km) of weighted habitat upstream of that structure to the next structure and depicts the immediate potential gain in habitat if passage at that structure was restored. Total Weighted Habitat Upstream per Set (km) represents the total amount (km) of weighted habitat upstream of the set, regardless of upstream structures, and depicts the long-term potential gain in habitat if passage at that structure (and all other upstream structures) was restored. Structure rank represents the model ranking of all sets of 1 or more structures."
+```{r tbl8, echo = FALSE, results = 'asis'}
+#| label: tbl8
+#| tbl-cap: "Table 8: Labelled structures in the Habitat Accumulation Curve, their rank, and upstream spawning and rearing habitat for Pacific salmon in the Horsefly River watershed. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored."
 #| warning: false
 #| echo: false
 source("Rscripts/table_formatting.R")
 library("flextable")
 
-data <- read.csv("data/table1.csv", check.names=FALSE)
+data <- read.csv("data/Table_8_hors_HAS.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
 ```
 
-```{r hac2, echo = FALSE, results = 'asis'}
-#| label: table-2
-#| tbl-cap: "Table 2. Labelled structures in the Habitat Accumulation Curve (Figure 4), their rank, and weighted upstream habitat for American Eel in the Stewiacke watershed. Weighted Habitat Gain per Set represents the amount (km) of weighted habitat upstream of that structure to the next structure and depicts the immediate potential gain in habitat if passage at that structure was restored. Total Weighted Habitat Upstream per Set (km) represents the total amount (km) of weighted habitat upstream of the set, regardless of upstream structures, and depicts the long-term potential gain in habitat if passage at that structure (and all other upstream structures) was restored. Structure rank represents the model ranking of all sets of 1 or more structures."
-#| warning: false
-#| echo: false
-source("Rscripts/table_formatting.R")
-library("flextable")
 
-data <- read.csv("data/table2.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- format_flextable(ft)
-ft
-```
