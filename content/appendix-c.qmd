@@ -1,8 +1,8 @@
 # Appendix C – Situation Analys, Strategies, Actions, and Theories of Change {-}
 
 The following situation model was developed by the WCRP Planning Team to “map” the project context and brainstorm potential actions for implementation. Green text is used to identify actions that were selected for implementation (see Strategies & Actions), and red text is used to identify actions that the project team has decided to exclude from the current iteration of the plan, as they were either outside of the project scope, or were deemed to be ineffective by the Planning Team. 
-MISSING FIG
-![Figure 4: Situation analysis developed by the Planning Team to identify factors that contribute to fragmentation (orange boxes), biophysical results (brown boxes), and potential strategies/actions to improve connectivity (yellow hexagons) for focal species in the Horsefly River watershed. ](images/Fig6_Situation Analysis.png){fig-cap-location="top"}
+
+![Figure 4: Situation analysis developed by the Planning Team to identify factors that contribute to fragmentation (orange boxes), biophysical results (brown boxes), and potential strategies/actions to improve connectivity (yellow hexagons) for focal species in the Horsefly River watershed. ](images/Fig4_situation analysis.png){fig-cap-location="bottom"}
 
 
 
@@ -178,10 +178,10 @@ ft
 
 Theories of Change are explicit assumptions about how the identified actions will achieve gains in connectivity and contribute towards reaching the goals of the plan. To develop Theories of Change, the planning team made explicit assumptions for each strategy to clarify the rationale used for undertaking actions and provide an opportunity for feedback on invalid assumptions or missing opportunities. The Theories of Change are results-oriented and clearly define the expected outcome. The following Theories of Change models were developed by the WCRP planning team to “map” the causal (“if-then”) progression of assumptions of how the actions within a strategy work together to achieve project goals. 
 
-![Figure 5: Theories of Change model developed by the planning team for the actions identified under Strategy 1: Crossing Rehabilitation in the Horsefly River watershed. ](images/Fig7_ToC.png){fig-cap-location="top"}
+![Figure 5: Theories of Change model developed by the planning team for the actions identified under Strategy 1: Crossing Rehabilitation in the Horsefly River watershed. ](images/Fig7_ToC.png){fig-cap-location="bottom"}
 
-![Figure 6: Theories of Change model developed by the planning team for the actions identified under Strategy 2: Lateral Barrier Rehabilitation in the Horsefly River watershed. ](images/Fig8_ToC.png){fig-cap-location="top"}
+![Figure 6: Theories of Change model developed by the planning team for the actions identified under Strategy 2: Lateral Barrier Rehabilitation in the Horsefly River watershed. ](images/Fig8_ToC.png){fig-cap-location="bottom"}
 
-![Figure 7: Theories of Change model developed by the planning team for the actions identified under Strategy 3: Dam Rehabilitation in the Horsefly River watershed. ](images/Fig9_ToC.png){fig-cap-location="top"}
+![Figure 7: Theories of Change model developed by the planning team for the actions identified under Strategy 3: Dam Rehabilitation in the Horsefly River watershed. ](images/Fig9_ToC.png){fig-cap-location="bottom"}
 
-![Figure 8: Theories of Change model developed by the planning team for the actions identified under Strategy 4: Barrier Prevention in the Horsefly River watershed. ](images/Fig10_ToC.png){fig-cap-location="top"}
+![Figure 8: Theories of Change model developed by the planning team for the actions identified under Strategy 4: Barrier Prevention in the Horsefly River watershed. ](images/Fig10_ToC.png){fig-cap-location="bottom"}
