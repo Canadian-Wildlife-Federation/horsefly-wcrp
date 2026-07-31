@@ -113,6 +113,8 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/Table_8_hors_HAS.csv", check.names=FALSE)
+habitat_columns <- grep("Habitat", names(data))
+data[habitat_columns] <- lapply(data[habitat_columns], round, digits = 2)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
