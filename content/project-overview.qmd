@@ -53,7 +53,7 @@ Anadromous salmon are cultural and ecological keystone species that contribute t
 Anadromous salmon populations in the Horsefly River watershed have declined significantly in the past few decades, with the populations of all three focal species being listed as Threatened or Endangered by the Committee on the Status of Endangered Wildlife in Canada. This has been exacerbated by the Big Bar landslide on the Fraser River in 2019 and the Chilcotin River landslide in 2024, leading the four NStQ communities to voluntarily close the salmon fishery from 2019 through 2024. The stewardship of their waters continues through the work of the NStQ member communities and the Northern Shuswap Tribal Council. 
 
 
-### Chinook Salmon | Kekèsu | Oncorhynchus tshawytscha {-}
+### Chinook Salmon | Kekèsu | *Oncorhynchus tshawytscha* {-}
 ```{r tbl2a, echo = FALSE, results = 'asis'}
 #| label: tbl2a
 #| tbl-cap: "Table 2: Chinook Salmon population assessments in the Horsefly River watershed. Conservation Unit assessments (a) were undertaken by the Pacific Salmon Foundation (2025). Designated Unit assessments (b) were undertaken by the Committee on the Status of Endangered Wildlife in Canada (COSEWIC 2018).<br> A"
@@ -83,7 +83,7 @@ ft
 Chinook Salmon are the first to return each year, usually in early August (DFO1991), and have the most limited distribution within the watershed. Known spawning occurs in parts of the Horsefly River mainstem above the confluence with the Little Horsefly River and throughout McKinley Creek as far upstream as Elbow Lake (DFO1991, S. Hocquard, pers. comm.). Important rearing systems include Patenaude Creek, Kroener Creek, Black Creek, Woodjam Creek, Deerhorn Creek, and Wilmot Creek (S. Hocquard, pers. comm.). 
 
 
-### Coho Salmon | Sxeyqs | Oncorhynchus kisutch  {-}
+### Coho Salmon | Sxeyqs | *Oncorhynchus kisutch*  {-}
 ```{r tbl3a, echo = FALSE, results = 'asis'}
 #| label: tbl3a
 #| tbl-cap: "Table 3: Coho Salmon population assessments in the Horsefly River watershed. Conservation Unit assessments (a) were undertaken by the Pacific Salmon Foundation (2025). Designated Unit assessments (b) were undertaken by the Committee on the Status of Endangered Wildlife in Canada (COSEWIC 2016).<br> A"
@@ -113,7 +113,7 @@ ft
 Coho Salmon are the most widely distributed of the three focal species in the watershed, with the ability to migrate into smaller, upper tributary systems (DFO 1991). Spawning occurs in the Little Horsefly River between Gruhs Lake and Horsefly Lake, McKinley Creek below McKinley Lake, Woodjam Creek, Patenaude Creek, Tisdall Creek, and Black Creek. Rearing fry and juveniles have been observed in the Little Horsefly River, Patenaude Creek, and McKinley Creek up to Bosk Lake (DFO 1991, S. Hocquard pers. comm.). 
 
 
-### Sockeye Salmon | Sqlelten7ùwi | Oncorhynchus nerka  {-}
+### Sockeye Salmon | Sqlelten7ùwi | *Oncorhynchus nerka*  {-}
 
 ```{r tbl4a, echo = FALSE, results = 'asis'}
 #| label: tbl4a
